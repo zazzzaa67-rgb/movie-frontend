@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Movie watchList</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Font family  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Find your film</h1>
+            <nav>
+                <ul>
+                    <li><a href="watchList.html">My Watchlist</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="movies">
+                <div id="search-bar">
+                    <label class="icon" for="movieName"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input type="search" placeholder="Blade Runner" id="movieName">
+                    <button id="search">search</button>
+                </div>
+                <div class="moviesCon" id="newMovies">
+                    <div class="container">
+                        <i class="fa-solid fa-film"></i>
+                        <p>Start exploring</p>
+                    </div>
+                </div>
+                <div id="AI">
+                    <div>
+                        <h3>Groq Assistant</h3>
+                        <p class="ai-buble">
+                            Hey there! I'm your AI movie assistant. 🎬 Tell me what kind of movie you're looking for, or just describe your mood,
+                            and I'll find your perfect watch! 🍿✨
+                        </p>
+                    </div>
+                    <div id="messages">
+                    </div>
+
+                    <div id="chat-bar">
+                        <textarea id="AIinputs" placeholder="Ask about your favorite Movie"></textarea>
+                        <button id="send"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                <button id="OpenId"><i class="fa-regular fa-message"></i></button>
+            </section>
+
+        </main>
+        <script src="script.js" type="module"></script>
+    </body>
+</html>

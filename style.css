@@ -1,0 +1,439 @@
+* , *::before , *::after{
+    box-sizing: border-box;
+}
+body {
+    margin : 0 ; 
+    font-family: "Roboto", sans-serif;
+    display : flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    background:
+            linear-gradient(rgba(0,0,0, 0.6) , rgba( 0,0,0, 0.6)),
+            url("images/movie.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width : 100%; 
+    
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    color : #ffffff; 
+    font-weight: 700;
+    height: 300px;
+    padding : 0 .4rem;
+
+}
+h1{
+    margin-top: 0;
+    margin-left: 0rem;
+    width : 55%;
+
+}
+header nav ul{
+    list-style-type: none;
+}
+nav ul li  a {
+    color : #ffffff;
+    text-decoration: none;
+    margin-right: 3px ;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+#movies{
+    width : 100%;
+    
+}
+#search-bar  {
+    position:absolute;
+    padding : 0 .4rem; 
+    height: 40px;
+    width: 90%;
+    max-width: 550px;
+    border: none;
+    border-radius: 3px ;
+    top :17rem ; 
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 1px 1px 15px #252525;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+#movieName{
+    border : none;
+    height: 100%;
+    width : 77%;
+    font-weight: 700;
+    padding : 0 .5rem;
+}
+#movieName:focus{
+    outline: none;
+}
+#search{
+    height: 100%;
+    background-color: #ffffff;
+    border: none;
+    font-weight: 600;
+    width : 12%;
+    color : gray;
+    border-left: 1px solid #808080;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+}
+.icon{
+    color : #808080;
+    border : none;
+}
+.moviesCon{
+    width : 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    color : #808080;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width : 100%; 
+    text-align: center;
+}
+.fa-film{
+    font-size: 4rem;
+}
+.empty{
+    width :90%; 
+    margin: 2px auto;
+}
+.move{
+    display: flex;
+    color : #000000;
+    gap : 2px  ;
+    text-decoration: none;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+.move p {
+    margin: 0;
+}
+
+.movie{
+    display : flex;
+    flex-direction: column; 
+    width : 100%;
+    margin: 1.5rem .5rem ;
+    padding:  0 .5rem;
+    height: fit-content; 
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    width : 90%; 
+}
+.movieCon{
+    display: flex;
+    gap : .5rem;
+    
+}
+.poster{
+    width:90% ; 
+    max-width:18.75rem;
+    margin-right: 1rem;
+    height: 380px;
+    border-radius: 2px;
+    
+}
+.movie h2{
+    width : 60%;
+
+}
+.plot{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-top: .7rem;
+}
+#Sorry{
+    text-align: center;
+}
+.add , .remove{
+    display : flex;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100px;
+    border: none;
+    background-color: #ffffff;
+    margin-top: 1rem;
+    cursor: pointer;
+    height: 1.8rem;
+}
+.fa-circle-plus ,.fa-circle-minus{
+    margin-right: .2rem;
+}
+.fa-star{
+    color: #ffd700;
+}
+.rate{
+    display: flex;
+}
+.movie-info{
+    display : flex ;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ##### AI section #### */
+#OpenId{
+    width : 60px ;
+    height: 60px ;
+    border-radius: 50%;
+    background-color: #ffd700;
+    color : #252525;
+    font-weight: bold;
+    padding : .2rem .2rem; 
+    border : solid 1px #252525;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+    margin: .4rem .5rem;
+    position: fixed;
+    bottom: 5px ;
+    left : 3px;
+    box-shadow: 1px 1px 1.2rem #252525;
+}
+
+#AI,
+#AI * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* الحاوية الكبيرة للشات */
+#AI {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    max-width: 25rem;
+    background-color: #1a1a1a;
+    border: solid 1px #2d2d2d;
+    border-radius: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    height: 75vh;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    padding: 1.2rem;
+    gap: 1rem;
+    overflow-x: hidden;
+}
+
+#AI h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    background: linear-gradient(43deg, #4f46e5 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ai-buble {
+    background-color: #262626;
+    padding: 1.1rem 1.4rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #4f46e5;
+    text-align: left;
+}
+
+#messages {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+#messages h1,
+#messages h2,
+#messages h3 {
+    color: #6366f1;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px dashed #333333;
+}
+
+#messages h1:first-child,
+#messages h2:first-child,
+#messages h3:first-child {
+    margin-top: 0;
+}
+
+
+#messages p {
+    margin-bottom: 0.8rem;
+    color: #cbd5e1;
+}
+
+/* تنسيق الكلمات المهمة (البيانات اللي الـ AI بيخليها Bold) */
+#messages strong {
+    color: #06b6d4;
+    /* لون سيان (أزرق مضيء) شيك جداً للكلمات المفتاحية زي Year, Genre */
+    font-weight: 600;
+}
+
+#messages ul {
+    list-style-type: none;
+    margin-bottom: 1.2rem;
+    padding-left: 0.2rem;
+}
+
+#messages li {
+    position: relative;
+    padding-left: 1.2rem;
+
+    margin-bottom: 0.5rem;
+    font-size: 0.98rem;
+}
+
+
+#messages li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: #4f46e5;
+    font-size: 0.85rem;
+}
+
+#messages a {
+    color: #22d3ee;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+#messages a:hover {
+    color: #06b6d4;
+    border-bottom-color: #06b6d4;
+}
+
+
+#chat-bar {
+    display: flex;
+    align-items: center;
+    background-color: #262626;
+    border: solid 1px #3a3a3a;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+
+    margin-top: auto;
+}
+
+#AIinputs {
+    flex: 1;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    min-height: 46px;
+    max-height: 120px;
+    line-height: 1.4;
+}
+
+#send {
+    width: 42px;
+    height: 42px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+#send:hover {
+    background-color: #4338ca;
+    transform: scale(1.05);
+}
+.show{
+    display : flex;
+}
+
+@media(min-width : 640px ){
+    header{
+        display: flex;
+        gap : 10rem ;
+        height: 500px;
+        padding : 0 4rem;
+    }
+    nav ul li a {
+        font-size: 1.5rem;
+        
+    }
+    #search-bar{
+        top: 30rem; 
+        height:45px  ;
+    }
+    .movie{
+        width: 100%;
+        flex-direction: row;
+        border-bottom: 1px solid #808080;
+    }
+    .poster{
+        margin-top: 2rem;
+        min-width: 350px;
+        max-width: 350px;
+        margin-left: 0rem;
+        margin-right: 2rem; 
+        
+    }
+    .plot{
+        max-width: 600px;
+    }
+    #AI{
+        left : 10px;
+        transform: none;
+        top: 18%;
+        height: 70vh;
+    }
+}
+.ai-message{
+    font-size: .9rem;
+    width: 90%;
+    padding : .3rem .5rem;
+    text-align: left;
+    
+}
